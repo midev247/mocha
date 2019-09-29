@@ -33,6 +33,7 @@ module.exports = config => {
       configure: function configure(b) {
         b.ignore('glob')
           .ignore('fs')
+          .ignore('./lib/esm-utils.js')
           .ignore('path')
           .ignore('supports-color')
           .on('bundled', (err, content) => {

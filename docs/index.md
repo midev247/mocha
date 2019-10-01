@@ -1529,7 +1529,7 @@ this means either ending the file with a `.mjs` extension, or, if you want to us
 adding `"type": "module"` to your `package.json`.
 More information can be found in the [Node.js documentation](https://nodejs.org/api/esm.html).
 
-> Mocha supports ES modules only from Node.js v12 and above. Also note that
+> Mocha supports ES modules only from Node.js v12.11.0 and above. Also note that
 > to enable this, you need to add `--experimental-modules` when running
 > Mocha. Last, but not least, the ESM implementation Mocha is not yet
 > stable so given that the specification in Node.js may

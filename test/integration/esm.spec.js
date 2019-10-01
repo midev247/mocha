@@ -1,5 +1,8 @@
 'use strict';
 var run = require('./helpers').runMochaJSON;
+var utils = require('../../lib/utils');
+
+if (!utils.supportsEsModules()) return;
 
 describe('esm', function() {
   it('should pass a passing esm test that uses esm', function(done) {

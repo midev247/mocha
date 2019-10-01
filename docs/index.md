@@ -40,6 +40,7 @@ Mocha is a feature-rich JavaScript test framework running on [Node.js][] and in 
 - [mocha.opts file support](#-opts-path)
 - clickable suite titles to filter test execution
 - [node debugger support](#-inspect-inspect-brk-inspect)
+- [node native ES modules support](#nodejs-native-esm-support)
 - [detects multiple calls to `done()`](#detects-multiple-calls-to-done)
 - [use any assertion library you want](#assertions)
 - [extensible reporting, bundled with 9+ reporters](#reporters)
@@ -1499,7 +1500,7 @@ To specify custom report title, use `--reporter-options suiteName="Custom name"`
 ### Third-Party Reporters
 
 Mocha allows you to define custom reporters. For more information see the [wiki][mocha-wiki-more-reporters].
-
+.equal
 Examples:
 
 - the [TeamCity reporter][mocha-teamcity-reporter]
@@ -1508,6 +1509,31 @@ Examples:
 ### HTML Reporter
 
 **The HTML reporter is not intended for use on the command-line.**
+
+## Node.JS native ESM support
+
+Mocha supports writing your tests as ES modules (without needing to use the `esm` polyfill module), and not just using CommonJS. For example:
+
+```js
+// test.mjs
+import {add} from './add.mjs';
+import assert from 'assert';
+
+it('should add to numbers from an es module', () => {
+  assert.equal(add(3, 5), 8);
+});
+```
+
+To enable this you don't need to do anything special. Write your test file as an ES module. In Node.js
+this means either ending the file with a `.mjs` extension, or, if you want to use the regular `.js` extension, by
+adding `"type": "module"` to your `package.json`.
+More information can be found in the [Node.js documentation](https://nodejs.org/api/esm.html).
+
+> Mocha supports ES modules only from Node.js v12 and above. Also note that
+> to enable this, you need to add `--experimental-modules` when running
+> Mocha. Last, but not least, the ESM implementation Mocha is not yet
+> stable so given that the specification in Node.js may
+> change, this may necessitate changes in Mocha's integration.
 
 ## Running Mocha in the Browser
 

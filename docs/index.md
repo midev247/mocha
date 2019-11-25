@@ -1500,7 +1500,7 @@ To specify custom report title, use `--reporter-options suiteName="Custom name"`
 ### Third-Party Reporters
 
 Mocha allows you to define custom reporters. For more information see the [wiki][mocha-wiki-more-reporters].
-.equal
+
 Examples:
 
 - the [TeamCity reporter][mocha-teamcity-reporter]
@@ -1530,10 +1530,8 @@ adding `"type": "module"` to your `package.json`.
 More information can be found in the [Node.js documentation](https://nodejs.org/api/esm.html).
 
 > Mocha supports ES modules only from Node.js v12.11.0 and above. Also note that
-> to enable this, you need to add `--experimental-modules` when running
-> Mocha. Last, but not least, the ESM implementation Mocha is not yet
-> stable so given that the specification in Node.js may
-> change, this may necessitate changes in Mocha's integration.
+> to enable this in vesions smaller than 13.2.0, you need to add `--experimental-modules` when running
+> Mocha. From version 13.2.0 of Node.js, you can use ES modules without any flags.
 
 ## Running Mocha in the Browser
 

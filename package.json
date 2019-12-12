@@ -36,7 +36,6 @@
     "node": ">= 8.0.0"
   },
   "scripts": {
-    "prepublishOnly": "nps test clean build",
     "start": "nps",
     "test": "nps test",
     "version": "nps version"

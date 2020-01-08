@@ -1,6 +1,6 @@
 {
   "name": "mocha-it-steps",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "ATTENTION: This is Fork of mocha framework and modified alot to consider it as a test step instead of test",
   "keywords": [
     "mocha",
